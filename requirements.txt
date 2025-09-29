@@ -1,8 +1,5 @@
 
-# requirements.txt - Safe for Render.com
+# minimal-requirements.txt
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
 requests==2.31.0
-pydantic==1.10.12  # Use Python-only version instead of pydantic v2
-python-multipart==0.0.6
-aiohttp==3.9.1
