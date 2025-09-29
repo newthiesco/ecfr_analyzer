@@ -1,11 +1,8 @@
-# requirements.txt
+
+# requirements.txt - Safe for Render.com
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
 requests==2.31.0
-pydantic==2.5.0
+pydantic==1.10.12  # Use Python-only version instead of pydantic v2
 python-multipart==0.0.6
-aiofiles==23.2.1  # Alternative for file operations
-
-# Avoid packages that require Rust compilation
-# If you need cryptography, use:
-cryptography==41.0.7  # This has pre-built wheels
+aiohttp==3.9.1
