@@ -53,3 +53,33 @@ Health check:
 
 Manual refresh:
 👉 http://127.0.0.1:8000/api/v1/update
+
+
+## Remote deployment
+You can deploy this app to any server that supports Python and has internet access. Here are general steps:
+1. Choose a hosting provider (e.g., Render).
+2. Set up a new web service with Python environment.
+3. Clone this repository to the server.
+4. Install dependencies using `pip install -r requirements.txt`.
+5. Configure the service to run `uvicorn app.main:app --host 0.
+0.0.0 --port $PORT` (adjust host/port as needed).
+6. Ensure the server has write permissions to `/tmp` or adjust the cache path in `
+app/main.py`.
+7. Start the service and verify it’s running by accessing the endpoints.
+8. Monitor logs for any issues and ensure the cache refreshes as expected.
+9. Optionally set up a domain and SSL for secure access.
+10. Test the API endpoints to ensure they return the expected data.
+11. Set up monitoring and alerts for uptime and performance.
+12. Regularly update dependencies and the codebase as needed.
+13. Consider setting up automated tests and CI/CD for smoother deployments.
+14. Document the deployment process for future reference.
+15. Ensure compliance with any hosting provider policies regarding web scraping.
+16. Backup the cache file periodically if necessary.
+## Notes
+- This is a basic implementation and may need adjustments based on specific requirements or changes in the eCFR website structure.
+- Always check the eCFR website’s terms of service regarding web scraping.
+- Consider adding error handling and logging for production use.
+- You may want to implement rate limiting or delays between requests to avoid overloading the eCFR servers.
+- For large-scale or frequent data retrieval, consider reaching out to the eCFR administrators for
+access to bulk data or APIs.
+
