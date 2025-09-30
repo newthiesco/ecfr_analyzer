@@ -69,16 +69,34 @@ You can deploy this app to any server that supports Python and has internet acce
 9. Regularly update dependencies and the codebase as needed.
 
 
+==============================================================================
 
+🚀 Deploying to Render (FastAPI + Uvicorn)
 
+Render makes it easy to host FastAPI apps.
+1. Push Your Code to GitHub
 
+Ensure the project (ecfr-analyzer/) is in a GitHub repo.
 
+Commit and push all changes, including requirements.txt and build.sh.
 
-## Notes
-- This is a basic implementation and may need adjustments based on specific requirements or changes in the eCFR website structure.
-- Always check the eCFR website’s terms of service regarding web scraping.
-- Consider adding error handling and logging for production use.
-- You may want to implement rate limiting or delays between requests to avoid overloading the eCFR servers.
-- For large-scale or frequent data retrieval, consider reaching out to the eCFR administrators for
-access to bulk data or APIs.
+2. Create a New Web Service on Render
+
+Log in to Render
+Go to the Render dashboard and click "New" > "Web Service".
+Connect your GitHub repo and select the repository containing your FastAPI app.
+Select your repo (ecfr-analyzer) and branch (e.g., main).
+
+3. Configure the Service
+Environment: Python 3
+
+Build Command:
+chmod +x build.sh && ./build.sh
+Configure the service to run:
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+Test API endpoints (/, /api/v1/agencies/size, /api/v1/health, /api/v1/update) to confirm correct responses.
+
+Maintain the app by updating dependencies and code as needed.
+
 
